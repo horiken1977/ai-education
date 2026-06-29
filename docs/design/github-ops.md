@@ -68,7 +68,7 @@ ai-sales-training/                    ← リポジトリ root
    │  ├─ l2.md
    │  └─ l3.md
    ├─ materials/                      配布教材（架空サンプル）
-   │  ├─ l1-shodan-memo.md            L1：商談メモサンプル
+   │  ├─ l1-transcript.md            L1：会議トランスクリプトサンプル
    │  ├─ l2-meeting-transcript.md     L2：会議文字起こし
    │  ├─ l2-deal-list.md              L2：案件リスト
    │  └─ l3-brief.md                  L3：案件ブリーフ
@@ -135,7 +135,7 @@ nav:
       - L2 初級〜中級: scripts/l2.md
       - L3 上級: scripts/l3.md
   - 配布教材:
-      - L1 商談メモ: materials/l1-shodan-memo.md
+      - L1 会議トランスクリプト: materials/l1-transcript.md
       - L2 会議文字起こし: materials/l2-meeting-transcript.md
       - L2 案件リスト: materials/l2-deal-list.md
       - L3 案件ブリーフ: materials/l3-brief.md
