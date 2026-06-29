@@ -1,6 +1,8 @@
 site_name: 営業向けAI研修プログラム
 site_description: 営業職向けAI教育（IBM Consulting Advantage + Copilot）の設計・台本・教材・KPI
 docs_dir: docs
+exclude_docs: |
+  slides/
 theme:
   name: material
   language: ja
