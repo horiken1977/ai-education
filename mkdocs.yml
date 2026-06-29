@@ -32,6 +32,7 @@ nav:
   - 設計:
       - カリキュラム設計書: design/curriculum.md
       - GitHub運用設計: design/github-ops.md
+      - 講義モード設計: design/lecture-mode.md
   - 講師台本:
       - 台本ガイド（共通）: scripts/index.md
       - オンボーディング（全員必須）: scripts/onboarding.md
