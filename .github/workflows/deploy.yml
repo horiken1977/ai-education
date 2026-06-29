@@ -15,9 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
-        with:
-          enablement: true          # Pages未設定なら初回実行時に自動で有効化（source=Actions）
+      - uses: actions/configure-pages@v5   # Pagesはリポジトリ設定で有効化済み（source=GitHub Actions）
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
