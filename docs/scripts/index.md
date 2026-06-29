@@ -2,7 +2,7 @@
 
 > 営業向けAI教育セッション ／ 各60分・完全リモート・ハンズオン
 > ツール：Copilot ＋ IBM Consulting Advantage（IBM CA） ／ 基盤：Microsoft 365
-> 台本：[オンボーディング（全員必須）](onboarding.md) ／ [L1 初心者](l1.md) ／ [L2 初級〜中級](l2.md) ／ [L3 上級](l3.md)
+> 台本：[オンボーディング](onboarding.md) ／ [LV1 チャットAI使い倒し](l1.md) ／ [LV2 Bobでデモ（旧・改訂予定）](l2.md) ／ [LV3 使い分け（旧・改訂予定）](l3.md)
 
 ## この台本の使い方
 - **「🎤セリフ」** はそのまま読める話し言葉。固すぎたら自分の言葉に崩してOK。
