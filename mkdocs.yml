@@ -40,11 +40,12 @@ nav:
       - 台本ガイド（共通）: scripts/index.md
       - オンボーディング（全員必須）: scripts/onboarding.md
       - LV1 チャットAI使い倒し: scripts/l1.md
-      - LV2 Bobでデモ（旧・改訂予定）: scripts/l2.md
+      - LV2 Bobでデモ: scripts/l2.md
       - LV3 使い分け（旧・改訂予定）: scripts/l3.md
   - 配布教材:
       - オンボーディング 会議トランスクリプト: materials/l1-transcript.md
       - LV1 リサーチ対象: materials/lv1-research-target.md
+      - LV2 デモ業務テーマ: materials/lv2-demo-theme.md
       - L2 会議文字起こし: materials/l2-meeting-transcript.md
       - L2 案件リスト: materials/l2-deal-list.md
       - L3 案件ブリーフ: materials/l3-brief.md
