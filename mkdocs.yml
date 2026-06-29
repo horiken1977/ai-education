@@ -1,0 +1,46 @@
+site_name: 営業向けAI研修プログラム
+site_description: 営業職向けAI教育（IBM Consulting Advantage + Copilot）の設計・台本・教材・KPI
+docs_dir: docs
+theme:
+  name: material
+  language: ja
+  features:
+    - navigation.sections      # レベル別にセクション表示
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - content.code.copy        # コードブロックにコピーボタン（プロンプト配布に便利）
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+plugins:
+  - search:
+      lang: ja
+markdown_extensions:
+  - admonition                 # 「!!! note」で注意書きボックス
+  - attr_list
+  - md_in_html                 # ダッシュボードのHTML/JS埋め込み用
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+nav:
+  - ホーム: index.md
+  - 設計:
+      - カリキュラム設計書: design/curriculum.md
+      - GitHub運用設計: design/github-ops.md
+  - 講師台本:
+      - 台本ガイド（共通）: scripts/index.md
+      - L1 初心者: scripts/l1.md
+      - L2 初級〜中級: scripts/l2.md
+      - L3 上級: scripts/l3.md
+  - 配布教材:
+      - L1 商談メモ: materials/l1-shodan-memo.md
+      - L2 会議文字起こし: materials/l2-meeting-transcript.md
+      - L2 案件リスト: materials/l2-deal-list.md
+      - L3 案件ブリーフ: materials/l3-brief.md
+  - テンプレート集: templates/index.md
+  - KPIダッシュボード: dashboard/index.md

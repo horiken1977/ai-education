@@ -1,0 +1,4 @@
+# すべての変更にレビューを必須化するための所有者指定。
+# 下記をプログラム運営責任者の GitHub アカウント / チームに置き換えてください。
+# 例：* @your-org/ai-training-admins
+* @REPLACE_WITH_OWNER
