@@ -34,6 +34,7 @@ nav:
       - GitHub運用設計: design/github-ops.md
   - 講師台本:
       - 台本ガイド（共通）: scripts/index.md
+      - オンボーディング（全員必須）: scripts/onboarding.md
       - L1 初心者: scripts/l1.md
       - L2 初級〜中級: scripts/l2.md
       - L3 上級: scripts/l3.md
