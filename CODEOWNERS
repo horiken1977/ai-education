@@ -1,4 +1,6 @@
 # すべての変更にレビューを必須化するための所有者指定。
-# 下記をプログラム運営責任者の GitHub アカウント / チームに置き換えてください。
-# 例：* @your-org/ai-training-admins
-* @REPLACE_WITH_OWNER
+# プログラム運営責任者の GitHub アカウント / チーム。
+# 注意：個人アカウント単独運用では、CODEOWNER は自分の PR を承認できないため、
+#       ブランチ保護で「Require review from Code Owners」を有効にすると自分の merge が止まる。
+#       共同運営者が増えたら下記をチーム（例：@your-org/ai-training-admins）に置き換える。
+* @horiken1977
