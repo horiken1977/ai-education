@@ -1,4 +1,4 @@
-# 営業向けAI研修プログラム GitHub運用設計
+# AIレベルアップセッション GitHub運用設計
 
 > プログラム一式（設計書・講師台本・配布教材・テンプレ・KPIダッシュボード）を **GitHub で一元管理し、MkDocs Material で HTML サイトとして社内公開** するための設計。
 > 関連：[カリキュラム設計書](curriculum.md) ／ [講師台本（L1/L2/L3）](../scripts/index.md)
@@ -89,6 +89,8 @@ ai-sales-training/                    ← リポジトリ root
 
 ## 3. セットアップ（コピペで使える設定一式）
 
+> ※本章のコード例は**初期構築時のスナップショット**。最新の正は実ファイル（`mkdocs.yml`／`.github/workflows/deploy.yml`／各ページ）と [カリキュラム設計書](curriculum.md)（レベル定義）。
+
 ### 3-1. `requirements.txt`
 ```
 mkdocs-material
@@ -96,8 +98,8 @@ mkdocs-material
 
 ### 3-2. `mkdocs.yml`
 ```yaml
-site_name: 営業向けAI研修プログラム
-site_description: 営業職向けAI教育（IBM Consulting Advantage + Copilot）
+site_name: AIレベルアップセッション
+site_description: AIレベルアップセッション（営業向け）
 docs_dir: docs
 theme:
   name: material
@@ -131,9 +133,11 @@ nav:
       - カリキュラム設計書: design/curriculum.md
       - GitHub運用設計: design/github-ops.md
   - 講師台本:
-      - L1 初心者: scripts/l1.md
-      - L2 初級〜中級: scripts/l2.md
-      - L3 上級: scripts/l3.md
+      - オンボーディング: scripts/onboarding.md
+      - LV1 チャットAI使い倒し: scripts/l1.md
+      - LV2 Bobでデモ: scripts/l2.md
+      - LV3 使い分け: scripts/l3.md
+      - エクストラ: scripts/extra.md
   - 配布教材:
       - L1 会議トランスクリプト: materials/l1-transcript.md
       - L2 会議文字起こし: materials/l2-meeting-transcript.md
@@ -262,7 +266,7 @@ __pycache__/
 
 ### Projects（12週スケジュールの可視化）
 - カンバン or タイムラインで **12週グリッド**（設計書§2）を管理。Milestone＝各サイクル/月。
-- 「初心者ゼロ・半数上級」の進捗を Issue/Project 上でも追える。
+- 「LV2 1割／LV3 7割／エクストラ 2割」への進捗を Issue/Project 上でも追える。
 
 ### 改善要望
 - 教材・運用の改善は `improvement.md` テンプレでIssue化 → PRで反映 → 履歴が残る（誰がいつ何を改善したか）。
@@ -306,9 +310,9 @@ fetch('data/levels.csv')
     new Chart(document.getElementById('levelChart'), {
       type: 'line',
       data: { labels, datasets: [
-        mk(1, 'L1 初心者', '#e53935'),
-        mk(2, 'L2 初級〜中級', '#fb8c00'),
-        mk(3, 'L3 上級', '#43a047'),
+        mk(1, 'LV1', '#0f62fe'),
+        mk(2, 'LV2', '#8a3ffc'),
+        mk(3, 'LV3', '#24a148'),
       ]},
       options: { plugins: { title: { display: true, text: 'レベル分布の推移' } } }
     });
@@ -360,5 +364,5 @@ GitHub Actions で CSV から **グラフ画像（PNG/SVG）を自動生成**（
 - **単一の正本**：教材・運営・データが1か所に集約され、「最新どれ？」問題が消える。
 - **履歴と再現性**：毎サイクルの改訂が追え、過去版を即復元できる（研修は回すほど教材が育つ前提と相性が良い）。
 - **編集の民主化**：Markdownだけ書けば公開される。非エンジニアの講師もWeb UIで貢献できる。
-- **運営の可視化**：Issue/Projectで「初心者ゼロ・半数上級」への進捗がチームに見える。
+- **運営の可視化**：Issue/Projectで「LV2 1割／LV3 7割／エクストラ 2割」への進捗がチームに見える。
 - **配布が一瞬**：プロンプトはコピーボタン付きHTMLで配れ、台本・教材・KPIが同じ場所に揃う。

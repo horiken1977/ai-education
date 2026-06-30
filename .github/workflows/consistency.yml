@@ -25,3 +25,11 @@ jobs:
             exit 1
           fi
           echo "OK: 廃止ファイルへの.mdリンクなし"
+      - name: 旧レベル名・旧プログラム名が残っていないか
+        run: |
+          # 設計書(curriculum.md)の最新表記からズレた旧表記を検出
+          if grep -rnE "L1 初心者|L2 初級|L3 上級|初級〜中級|3つのレベル|初心者ゼロ|半数以上が上級|営業向けAI研修" docs mkdocs.yml; then
+            echo "::error::旧レベル名/旧プログラム名が残っています（上記）。設計書(curriculum.md)の最新表記に合わせてください。"
+            exit 1
+          fi
+          echo "OK: 旧表記なし"

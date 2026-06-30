@@ -1,4 +1,4 @@
-# 営業向けAI研修プログラム（リポジトリ）
+# AIレベルアップセッション（リポジトリ）
 
 営業職向けAI教育プログラム（IBM Consulting Advantage + Copilot）の **設計書・講師台本・配布教材・テンプレート・KPIダッシュボード** を一元管理するリポジトリです。
 中身は [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) で HTML サイトとしてビルドされ、GitHub Pages（社内限定）で公開されます。

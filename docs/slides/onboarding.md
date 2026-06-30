@@ -2,7 +2,7 @@
 marp: true
 theme: ibm
 paginate: true
-header: '営業向けAI研修 — オンボーディング'
+header: 'AIレベルアップセッション — オンボーディング'
 ---
 
 <!-- _class: lead -->

@@ -2,7 +2,7 @@
 marp: true
 theme: ibm
 paginate: true
-header: '営業向けAI研修 — エクストラ（希望者）'
+header: 'AIレベルアップセッション — エクストラ（希望者）'
 ---
 
 <!-- _class: lead -->
