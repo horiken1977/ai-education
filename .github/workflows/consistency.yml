@@ -17,10 +17,11 @@ jobs:
       - run: pip install -r requirements.txt
       - name: MkDocs strict build（リンク/ナビ切れを検出）
         run: mkdocs build --strict
-      - name: 廃止ファイルへの参照が残っていないか
+      - name: 廃止ファイルへの.mdリンクが残っていないか
         run: |
-          if grep -rnE "curriculum-v2|dashboard-m365" docs mkdocs.yml; then
-            echo "::error::廃止済みファイルへの参照が残っています（上記）。リンクを正本へ更新してください。"
+          # 実ファイル参照（.md付き）だけを検出。説明文中の語そのもの（maintenance.md等）は誤検知しない
+          if grep -rnE "(curriculum-v2|dashboard-m365)\.md" docs mkdocs.yml; then
+            echo "::error::削除済みファイルへの.mdリンクが残っています（上記）。リンクを正本へ更新してください。"
             exit 1
           fi
-          echo "OK: 廃止ファイルへの参照なし"
+          echo "OK: 廃止ファイルへの.mdリンクなし"
