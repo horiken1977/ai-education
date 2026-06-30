@@ -32,8 +32,8 @@ markdown_extensions:
 nav:
   - ホーム: index.md
   - 設計:
-      - カリキュラム改訂版（レベル再定義・3ヶ月）: design/curriculum-v2.md
-      - カリキュラム設計書（旧・参照用）: design/curriculum.md
+      - カリキュラム設計書（正本）: design/curriculum.md
+      - 設計の整合を保つ仕組み: design/maintenance.md
       - GitHub運用設計: design/github-ops.md
       - 講義モード設計: design/lecture-mode.md
   - 講師台本:

@@ -1,0 +1,26 @@
+name: Consistency check
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - run: pip install -r requirements.txt
+      - name: MkDocs strict build（リンク/ナビ切れを検出）
+        run: mkdocs build --strict
+      - name: 廃止ファイルへの参照が残っていないか
+        run: |
+          if grep -rnE "curriculum-v2|dashboard-m365" docs mkdocs.yml; then
+            echo "::error::廃止済みファイルへの参照が残っています（上記）。リンクを正本へ更新してください。"
+            exit 1
+          fi
+          echo "OK: 廃止ファイルへの参照なし"
