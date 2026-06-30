@@ -78,7 +78,7 @@ paginate: true
 ## 3. ダッシュボード：公開サイト内の別ディレクトリ
 - ダッシュボードは公開GitHub Pages内の **`/dashboard/`** に置く（Chart.jsでレベル分布の推移を表示）。
 - 講義スライド（`/slides/`）とは**ディレクトリを分けるだけ**。アクセス制御はしない（機密ではないため）。
-- データは Forms→集計→`docs/dashboard/data/levels.csv` にコミット（**個人が特定できる生データは載せない**。集計値のみ）。
+- データは Forms→CSVエクスポートを `docs/dashboard/data/responses.csv` にコミット（JSが集計）。**氏名・メールは含めない（Formsは匿名設定）**。
 - ※「本当に運営者だけ」に隠したい場合のみM365へ移す（今回は不要と判断）。
 
 ---
