@@ -10,7 +10,7 @@
 
 ## 講義スライド（投影用）
 講師が投影する、**PPTのように1画面ずつ切り替わる**スライドです（矢印キーで送り、`F`でフルスクリーン／スクロールしません）。
-<a href="slides/onboarding.html" target="_blank">▶ オンボーディング</a> ／ <a href="slides/l1.html" target="_blank">▶ LV1</a> ／ <a href="slides/l2.html" target="_blank">▶ LV2</a>
+<a href="slides/onboarding.html" target="_blank">▶ オンボーディング</a> ／ <a href="slides/l1.html" target="_blank">▶ LV1</a> ／ <a href="slides/l2.html" target="_blank">▶ LV2</a> ／ <a href="slides/l3.html" target="_blank">▶ LV3</a>
 
 ## まず全員：オンボーディング
 レベル別に入る前に、**全員が「オンボーディング」を1回受講**します。AIを自分の手で触って「これは使えそう」を体感し、**「学び続ける／“身につく”をゴールにする／一緒に学び合う」** マインドセットを持つ回です。→ [オンボーディング台本](scripts/onboarding.md)
