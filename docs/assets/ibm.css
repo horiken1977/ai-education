@@ -1,0 +1,114 @@
+/* ===========================================================
+   IBM トンマナ（IBM Design Language / Carbon 準拠）
+   - フォント：IBM Plex Sans / IBM Plex Sans JP / IBM Plex Mono
+   - 配色：IBM Blue 60 (#0f62fe)、Gray 100 (#161616)、Gray 10 (#f4f4f4)
+   - 角丸なし（Carbon はシャープなエッジ）、黒ヘッダー
+   =========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Sans+JP:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* フォント */
+  --md-text-font-family: "IBM Plex Sans JP", "IBM Plex Sans", system-ui, -apple-system, "Hiragino Sans", "Yu Gothic", sans-serif;
+  --md-code-font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Carbon / IBM カラー */
+  --md-primary-fg-color: #161616;          /* ヘッダー（IBMの黒トップバー） */
+  --md-primary-fg-color--light: #393939;
+  --md-primary-fg-color--dark: #000000;
+  --md-primary-bg-color: #ffffff;
+  --md-primary-bg-color--light: #c6c6c6;
+
+  --md-accent-fg-color: #0f62fe;           /* IBM Blue 60：hover/active */
+  --md-accent-fg-color--transparent: rgba(15, 98, 254, 0.1);
+
+  --md-typeset-color: #161616;             /* 本文 Gray 100 */
+  --md-typeset-a-color: #0f62fe;           /* リンク IBM Blue */
+  --md-default-bg-color: #ffffff;
+}
+
+/* 本文フォントを確実に適用 */
+body, input, .md-typeset { font-family: var(--md-text-font-family); }
+.md-typeset code, .md-typeset pre, code, kbd, pre { font-family: var(--md-code-font-family); }
+
+/* 見出し：IBMはやや太め・字間つめ */
+.md-typeset h1, .md-typeset h2, .md-typeset h3 { font-weight: 600; letter-spacing: 0; color: #161616; }
+.md-typeset h1 { font-weight: 600; }
+
+/* リンク */
+.md-typeset a { color: #0f62fe; text-underline-offset: .15em; }
+.md-typeset a:hover { color: #0043ce; }   /* Blue 70 */
+
+/* ヘッダー：黒バー・フラット */
+.md-header { background-color: #161616; box-shadow: none; border-bottom: 1px solid #393939; }
+.md-tabs { background-color: #161616; }
+.md-header__title { font-weight: 600; }
+
+/* 検索：シャープ・IBMブルーのフォーカス */
+.md-search__form { border-radius: 0; background-color: #393939; }
+.md-search__input { border-radius: 0; }
+.md-search__input::placeholder { color: #c6c6c6; }
+
+/* ナビ：アクティブ/ホバーは IBM ブルー */
+.md-nav__link:focus, .md-nav__link:hover { color: #0f62fe; }
+.md-nav__link--active, .md-nav__item--active > .md-nav__link { color: #0f62fe; font-weight: 600; }
+
+/* 角丸なし（Carbon のシャープなエッジ） */
+.md-typeset code,
+.md-typeset pre,
+.md-typeset pre > code,
+.md-typeset .admonition,
+.md-typeset details,
+.md-typeset .tabbed-set > label,
+.md-typeset table:not([class]),
+.md-search__form,
+.md-search__input,
+.md-button,
+.highlight,
+.md-typeset .highlight code {
+  border-radius: 0 !important;
+}
+
+/* コード：Gray 10 背景 */
+.md-typeset code { background-color: #f4f4f4; color: #161616; }
+.md-typeset pre > code { background-color: #f4f4f4; }
+.highlight { background-color: #f4f4f4; }
+
+/* テーブル：Carbon スタイル（黒ヘッダー行） */
+.md-typeset table:not([class]) { border: 1px solid #e0e0e0; }
+.md-typeset table:not([class]) th {
+  background-color: #161616;
+  color: #ffffff;
+  font-weight: 600;
+}
+.md-typeset table:not([class]) tr:hover { background-color: #f4f4f4; }
+
+/* 注意書き / details：左に IBM ブルーのライン */
+.md-typeset .admonition, .md-typeset details {
+  border-left: 3px solid #0f62fe;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* ボタン（md-button）：IBM プライマリ */
+.md-typeset .md-button {
+  border-radius: 0;
+  border-color: #0f62fe;
+  color: #0f62fe;
+}
+.md-typeset .md-button--primary {
+  background-color: #0f62fe;
+  border-color: #0f62fe;
+  color: #ffffff;
+}
+.md-typeset .md-button--primary:hover {
+  background-color: #0043ce;
+  border-color: #0043ce;
+}
+
+/* 選択ハイライト */
+::selection { background: #0f62fe; color: #ffffff; }
+
+/* スクロールバー/タブのアクセント */
+.md-tabs__link--active, .md-tabs__link:hover { opacity: 1; }

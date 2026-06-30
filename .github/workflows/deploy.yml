@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: '20'
       - name: Build Marp slides
-        run: npx -y @marp-team/marp-cli@latest --input-dir docs/slides --output site/slides --html
+        run: npx -y @marp-team/marp-cli@latest --input-dir docs/slides --output site/slides --html --theme-set docs/slides/ibm.css
       - uses: actions/upload-pages-artifact@v3
         with:
           path: site
