@@ -45,6 +45,7 @@ nav:
       - LV1 チャットAI使い倒し: scripts/l1.md
       - LV2 Bobでデモ: scripts/l2.md
       - LV3 使い分け: scripts/l3.md
+      - エクストラ（希望者）Bobでアプリ: scripts/extra.md
   - 配布教材:
       - オンボーディング 会議トランスクリプト: materials/l1-transcript.md
       - LV1 リサーチ対象: materials/lv1-research-target.md
