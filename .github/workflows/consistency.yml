@@ -33,3 +33,5 @@ jobs:
             exit 1
           fi
           echo "OK: 旧表記なし"
+      - name: データ重複・表示ダブり・ナビ重複の検出
+        run: python3 tools/check_dup.py
