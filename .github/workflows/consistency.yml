@@ -28,7 +28,8 @@ jobs:
       - name: 旧レベル名・旧プログラム名が残っていないか
         run: |
           # 設計書(curriculum.md)の最新表記からズレた旧表記を検出
-          if grep -rnE "L1 初心者|L2 初級|L3 上級|初級〜中級|3つのレベル|初心者ゼロ|半数以上が上級|営業向けAI研修" docs mkdocs.yml; then
+          # maintenance.md は検査仕様の説明で旧表記を例示するため除外（自己言及の誤検知回避）
+          if grep -rnE "L1 初心者|L2 初級|L3 上級|初級〜中級|3つのレベル|初心者ゼロ|半数以上が上級|営業向けAI研修" docs mkdocs.yml --exclude=maintenance.md; then
             echo "::error::旧レベル名/旧プログラム名が残っています（上記）。設計書(curriculum.md)の最新表記に合わせてください。"
             exit 1
           fi
