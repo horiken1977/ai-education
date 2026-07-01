@@ -39,8 +39,15 @@ for path in (SCRIPT, SLIDE):
     if not path.exists():
         errors.append(f"[ファイル無し] {path.relative_to(ROOT)} が見つかりません。")
 
+def visible(text):
+    """HTMLコメント（<!-- -->）を除去して“実際に見える中身”だけを残す。
+    編集リマインダのコメントや Marp ディレクティブにマーカー語が入っていても、
+    それで整合チェックが通ってしまう“偽の緑”を防ぐ（実体でだけ判定する）。"""
+    return re.sub(r"<!--.*?-->", "", text, flags=re.DOTALL)
+
+
 if not errors:
-    texts = {p: p.read_text(encoding="utf-8") for p in (SCRIPT, SLIDE)}
+    texts = {p: visible(p.read_text(encoding="utf-8")) for p in (SCRIPT, SLIDE)}
     for block, markers in CHECKS.items():
         for m in markers:
             pat = re.compile(m)

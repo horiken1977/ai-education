@@ -5,6 +5,14 @@ paginate: true
 header: 'AIレベルアップセッション — オンボーディング'
 ---
 
+<!--
+編集メモ（スライドには映りません）── オンボの「消さない語」＝番人 tools/check_onboarding_sync.py が監視。
+言い回しは自由に変えてOK。ただし次の“語そのもの”をスライドから消すとCIが赤になります：
+  一気通貫 / RFP / 手を動か / 成果物 / 卒業条件 / LV3 / ①調べる / 渡し方 / 12週 / 7割
+この語ごと変えたい時は check_onboarding_sync.py の CHECKS と 台本 scripts/onboarding.md も一緒に更新。
+編集後は必ず: bash tools/check_slides.sh  （赤が無ければ push＝自動デプロイ）
+-->
+
 <!-- _class: lead -->
 # 会議の「録画」を議事録に
 

@@ -55,8 +55,11 @@
 
 ### ローカルでの確認
 ```bash
+bash tools/check_slides.sh   # 速い整合チェック一括（重複＋受講者向け整合＋旧表記／mkdocsがあればstrictも）
+# （フル確認したい時）
 pip install -r requirements.txt
-mkdocs build --strict      # 警告＝エラーで止まる。何も出なければ整合OK
+mkdocs build --strict        # 警告＝エラーで止まる。何も出なければ整合OK
 ```
+> **スライドを手編集したら**：`tools/check_slides.sh` を緑にしてから push。設計書への逆反映・台本への反映・CI・公開まで一気にやるなら **スキル `/slide-sync`**（`.claude/commands/slide-sync.md`）を使う。編集時の「消さない語」は `slides/onboarding.md` 冒頭の非表示コメントにも明記。
 
 > セマンティックな中身（台本と設計書の“言っていること”の一致）は完全には自動化できない。ただし**受講者向け正本ブロックだけはキー概念マーカーで台本⇄スライドの取りこぼしを機械検出**（§3-5）。残りは**§1の正本マップ＋§2のチェックリスト**で人が担保し、CIは**構造のズレ**を機械で止める、という二段構え。
