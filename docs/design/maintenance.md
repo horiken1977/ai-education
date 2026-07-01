@@ -9,7 +9,7 @@
 | 対象 | 正本（ここだけが正） | 追従する場所 |
 |---|---|---|
 | レベル定義・卒業条件・スケジュール・ゴール分布・業務フロー | **`design/curriculum.md`** | `scripts/*`・`slides/*`・`mkdocs.yml` nav・レベル診断Forms |
-| オンボで受講者に説明する設計書冒頭ブロック（前提＝営業プロセス変革／設計の重心／背骨＝業務フロー×渡し方／レベル定義・選び方） | **`design/curriculum.md` 冒頭** | **`scripts/onboarding.md`（台本＝話し言葉）と `slides/onboarding.md`（スライド＝縮約版）の両方に必須**（§3-5の番人が監視） |
+| オンボで受講者に説明する設計書冒頭ブロック（①前提＝営業プロセス変革／②設計の重心／③レベル定義と卒業条件／④背骨＝業務フロー×渡し方／⑤3ヶ月12週スケジュール） | **`design/curriculum.md` 冒頭** | **`scripts/onboarding.md`（台本＝話し言葉）と `slides/onboarding.md`（スライド「全体像①〜⑤」＝縮約版）の両方に必須**（§3-5の番人が監視） |
 | 各レベルの分刻み進行（セリフ・操作・チャット） | **`scripts/<level>.md`（台本）** | `slides/<level>.md`（投影は台本の要点だけ） |
 | 安全・録画・同意の共通ルール | **`scripts/index.md`（台本ガイド）** | 各台本は参照（再掲は最小限） |
 | GitHub運用・ビルド・公開 | **`design/github-ops.md` ＋ `mkdocs.yml` ＋ `deploy.yml`** | — |
