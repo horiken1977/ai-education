@@ -5,11 +5,11 @@
 
 ## このサイトの使い方
 - **講師・運営の方** → まず [カリキュラム設計書](design/curriculum.md)、当日は [講師台本](scripts/index.md)。
-- **受講者の方** → 自分のレベルの[配布教材](materials/l1-transcript.md)と[テンプレート集](templates/index.md)を使ってください。
+- **受講者の方** → 受けた回の[**スライド（復習用）**](slides-index.md)で復習・予習。自分のレベルの[配布教材](materials/l1-transcript.md)と[テンプレート集](templates/index.md)も使えます。
 - **進捗を見たい方** → [KPIダッシュボード](dashboard/index.md)。
 
 ## 講義スライド（投影用）
-講師が投影する、**PPTのように1画面ずつ切り替わる**スライドです（矢印キーで送り、`F`でフルスクリーン／スクロールしません）。
+講師が投影する、**PPTのように1画面ずつ切り替わる**スライドです（矢印キーで送り、`F`でフルスクリーン／スクロールしません）。受講者の復習・予習用の一覧は [**スライド（復習用）**](slides-index.md)。
 <a href="slides/onboarding.html" target="_blank">▶ オンボーディング</a> ／ <a href="slides/l1.html" target="_blank">▶ LV1</a> ／ <a href="slides/l2.html" target="_blank">▶ LV2</a> ／ <a href="slides/l3.html" target="_blank">▶ LV3</a> ／ <a href="slides/extra.html" target="_blank">▶ エクストラ</a>
 
 ## まず全員：オンボーディング
