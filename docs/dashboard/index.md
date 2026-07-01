@@ -94,3 +94,17 @@ fetch('data/responses.csv').then(r=>r.text()).then(text=>{
 
 !!! note "外部CDNが使えない環境では"
     社内で jsdelivr（Chart.js のCDN）が遮断される場合は、Chart.js を `docs/assets/` に同梱するか、グラフ画像をActionsで生成する方式に切り替えます。
+
+---
+
+## 6. 運営者向け：教材（スライド等）を直したいとき
+
+!!! note "スライドを手編集する運用"
+    **スライド**＝`docs/slides/*.md`（Marp）。文言は VS Code 拡張「Marp for VS Code」で見ながら編集できます。
+
+    1. 編集したら **`bash tools/check_slides.sh`**（重複・受講者向け整合・旧表記を一括チェック）。
+    2. **緑なら** commit → push（＝自動デプロイ）。**赤なら**表示メッセージに従って直す。
+    3. 設計書への逆反映・台本への反映・CI・公開まで一気に任せるなら、スキル **`/slide-sync`** を使う。
+
+    - オンボの「消してはいけない語」は `slides/onboarding.md` 冒頭の**非表示コメント**に明記（番人が台本⇄スライドの取りこぼしを検出）。
+    - 詳しい規約・チェックリストは [設計の整合を保つ仕組み（メンテ規約）](../design/maintenance.md)。
