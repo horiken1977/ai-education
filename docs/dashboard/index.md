@@ -1,36 +1,33 @@
 # KPIダッシュボード
 
-各回の**末尾で答えるアンケート（Microsoft Forms）**の `[週]`／`[到達]` をもとに、**到達レベルの分布が3ヶ月でどう動くか**（LV1が減りLV3・エクストラが増える）を表示します。**オンボーディング末尾のアンケートも同じ仕組みで W1 として記録**されます（このアンケートが到達レベル記録＝KPIを兼ねる）。
-運用は **「Formsの結果をCSVで書き出して `data/responses.csv` に置く（上書き）」だけ**。集計はこのページのJavaScriptが自動で行います。
+各回の**末尾で答えるアンケート（Microsoft Forms）**をもとに、**到達レベルの分布がセッションを重ねてどう動くか**（LV1が減りLV3・エクストラが増える）を表示します。**回は「完了時刻（日付）」で自動判定**するので、受講者に週番号（W1/W2…）を選ばせる必要はありません（間違い防止）。このアンケートが到達レベル記録＝KPIを兼ねます。
+運用は **「Formsの結果をCSVで書き出して `data/responses.csv` に上書き」だけ**。集計はこのページのJavaScriptが自動で行います。
 
 !!! warning "公開リポジトリなので個人情報は載せない"
-    このサイトは公開です。CSVに **氏名・メールアドレスを含めない**でください。
-    対策：Formsを **匿名（名前を記録しない）** に設定する。集計に必要なのは「[週]」と「[到達]」の2列だけです。
+    このサイトは公開です。CSVに **氏名・メールアドレスを含めない**でください（列があっても空/`anonymous`ならOK）。
+    対策：Formsを **匿名（名前・メールを記録しない）** に設定する。集計に使うのは **日付**と**到達レベル**の2列だけです。
 
 ---
 
-## 1. Forms の設計（推奨）
-質問タイトルの**先頭に `[タグ]` を付ける**と、ダッシュボードが列を確実に拾えます（Formsの列見出し＝質問文そのままのため）。
+## 1. Forms の設計（実アンケートに自動対応）
+特別なタグは不要です。ダッシュボードが**列名（質問文）で自動検出**します。必要なのは次の2つだけ：
 
-| 質問（タイトル例） | 形式 | 選択肢／用途 | ダッシュボード |
-|---|---|---|---|
-| `[週] 今回の研修回` | 単一選択 | `W1`,`W2`, … `W12`（または実施日） | **横軸（必須）** |
-| `[到達] 現時点のあなたの到達レベル` | 単一選択 | `オンボーディング`,`LV1`,`LV2`,`LV3`,`エクストラ` | **集計の主軸（必須）** |
-| `[出席] 今回出た回` | 単一選択 | 同上（任意） | 参考 |
-| `[自己評価] 今日の手応え` | 単一選択 | `1`〜`5`（任意） | 参考 |
-| 自由記述（困りごと・要望） | 記述式 | （任意） | 集計対象外 |
+| 使う情報 | どの列を見るか（自動検出） | 必要な中身 |
+|---|---|---|
+| **回（横軸）** | `完了時刻`（無ければ `開始時刻`） | Formsが自動で持つ日時。**日付でその回を判定**（W番号入力は不要） |
+| **到達レベル（積み上げ）** | `…どのレベル…` を含む質問（例：`現在ご自身はどのレベルにあると思いますか？`） | 単一選択。`オンボーディング`／`Lv1`／`Lv2`／`Lv3`／`エクストラ` が判別できる表記 |
 
-- **設定**：回答受付＝匿名（名前を記録しない）。`[到達]` は卒業条件（[カリキュラム設計書](../design/curriculum.md) §2）を満たした最上位レベルを選んでもらう。
-- 選択肢ラベルは **`LV1` など短く固定**（`[到達]` は上表の5値と一致させる：ダッシュボードは `オンボ*`／`LV1`〜`LV3`／`エクストラ` を認識）。
-- **データ源＝各回の末尾アンケート**：オンボーディングを含め毎回セッション終わりに**同じ Forms を使い回し**、`[週]` だけ変える。オンボは `W1` として入る → 回を重ねるほど分布の推移が積み上がる。
-- 1つのFormを毎週使い回し、`[週]` で回を区別 → **エクスポートは常に1ファイル**で済む。
+- **到達レベルの選択肢**は `オンボーディング（レベル０）` `Lv1（レベル１）` … のような表記でOK（ダッシュボードは `オンボ*`／`Lv1〜3`＝`レベル１〜３`／`エクストラ` を吸収）。**新しい表記を足したら** JSの `normLevel` を1行足す。
+- **匿名設定**（名前・メールを記録しない）。`メール` 列が `anonymous`・`名前` が空なら公開してもOK。
+- **同じ Forms を毎回使い回す**（オンボ含む）。回はアンケートの**回答日**で自動的に分かれるので、受講者は日付も週番号も入力不要。
+- 到達レベルは卒業条件（[カリキュラム設計書](../design/curriculum.md) §2）を満たした最上位を選んでもらう。
 
 ## 2. 運用（毎回これだけ）
-1. Forms の「応答」→ **エクスポート**（Excelで開く →「名前を付けて保存」で **CSV UTF-8**）。
-2. 書き出したCSVを **`docs/dashboard/data/responses.csv` に上書き**してコミット（push）。
+1. Forms の「応答」→ **エクスポート**（Excelで開く →「名前を付けて保存」で **CSV UTF-8**）。※普通の「CSV」だと Shift_JIS で文字化けするので必ず **CSV UTF-8**。
+2. 書き出したCSVを **`docs/dashboard/data/responses.csv` にリネームして上書き**しコミット（push）。※ダッシュボードは常にこの固定名を読むので、Forms側のファイル名は問わない。
 3. 数分後、このページのグラフが自動更新（Formsは累積エクスポートなので毎回まるごと上書きでOK）。
 
-> CSVに氏名・メール列が残っている場合は、コミット前に削除（`[週]`/`[到達]` 列があれば動きます）。
+> いまは**実フォーマットのサンプル**（3日分）が入っています。初回オンボ後、実エクスポートで上書きすればそのまま置き換わります。氏名・メールが実データで入る設定なら、コミット前に匿名化してください。
 
 ---
 
@@ -57,23 +54,36 @@ function parseCSV(t){
   if(cur!==''||row.length){row.push(cur);rows.push(row);}
   return rows;
 }
-function normLevel(v){ if(!v)return null; if(v.includes('オンボ'))return 'オンボーディング';
-  for(const L of ['LV1','LV2','LV3']) if(v.includes(L))return L;
-  if(v.includes('エクストラ')||v.toLowerCase().includes('extra'))return 'エクストラ'; return null; }
+// 到達レベルのラベル正規化（"Lv1（レベル１）" "オンボーディング（レベル０）" 等を吸収）
+function normLevel(v){ if(!v)return null; const s=(''+v).toLowerCase();
+  if(v.includes('オンボ')||s.includes('レベル０')||s.includes('レベル0')||s.includes('lv0'))return 'オンボーディング';
+  if(s.includes('lv1')||v.includes('レベル１')||s.includes('レベル1'))return 'LV1';
+  if(s.includes('lv2')||v.includes('レベル２')||s.includes('レベル2'))return 'LV2';
+  if(s.includes('lv3')||v.includes('レベル３')||s.includes('レベル3'))return 'LV3';
+  if(v.includes('エクストラ')||s.includes('extra'))return 'エクストラ'; return null; }
+// 回答日時（"7/3/26 0:30:47" 等）→ セッション日 "YYYY-MM-DD"。回は日付で判定（W番号不要）
+function toDate(v){ const p=(''+(v||'')).trim().split(/[ T]/)[0];
+  let m=p.match(/^(\d{1,2})\/(\d{1,2})\/(\d{2,4})$/);
+  if(m){ let y=+m[3]; if(y<100)y+=2000; return y+'-'+String(+m[1]).padStart(2,'0')+'-'+String(+m[2]).padStart(2,'0'); }
+  m=p.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if(m){ return m[1]+'-'+String(+m[2]).padStart(2,'0')+'-'+String(+m[3]).padStart(2,'0'); }
+  return p||null; }
 fetch('data/responses.csv').then(r=>r.text()).then(text=>{
   const rows=parseCSV(text).filter(r=>r.some(c=>(c||'').trim()!==''));
   const header=rows.shift()||[];
-  const col=kw=>header.findIndex(h=>(h||'').includes(kw));
-  const wi=col('[週]'), li=col('[到達]');
-  if(wi<0||li<0){ document.getElementById('dashMsg').textContent='CSVに [週] または [到達] の列が見つかりません。質問タイトルにタグを付けてください。'; return; }
+  const find=(...kws)=>header.findIndex(h=>kws.some(k=>(h||'').includes(k)));
+  let di=find('完了時刻'); if(di<0)di=find('開始時刻'); if(di<0)di=find('日付','日時','[週]');
+  let li=find('どのレベル'); if(li<0)li=find('到達','[到達]');
+  const msg=document.getElementById('dashMsg');
+  if(di<0||li<0){ msg.textContent='CSVに「日付（完了時刻/開始時刻）」または「到達レベル（現在ご自身はどのレベル…）」の列が見つかりません。'; return; }
   const counts={};
-  rows.forEach(r=>{ const w=(r[wi]||'').trim(); const lv=normLevel((r[li]||'').trim());
+  rows.forEach(r=>{ const w=toDate(r[di]); const lv=normLevel((r[li]||'').trim());
     if(!w||!lv)return; (counts[w]=counts[w]||{})[lv]=(counts[w][lv]||0)+1; });
-  const weeks=Object.keys(counts).sort((a,b)=>((parseInt(a.replace(/\D/g,''))||0)-(parseInt(b.replace(/\D/g,''))||0))||a.localeCompare(b));
-  if(!weeks.length){ document.getElementById('dashMsg').textContent='有効な回答がまだありません。'; return; }
+  const weeks=Object.keys(counts).sort();  // ISO日付なので文字列ソートで時系列
+  if(!weeks.length){ msg.textContent='有効な回答がまだありません（日付・到達レベルの入った行が必要）。'; return; }
   const datasets=LEVELS.map(L=>({label:L,data:weeks.map(w=>counts[w][L]||0),backgroundColor:COLORS[L]}));
   new Chart(document.getElementById('distChart'),{type:'bar',data:{labels:weeks,datasets},
-    options:{plugins:{title:{display:true,text:'到達レベルの分布（回ごと・人数）'}},responsive:true,
+    options:{plugins:{title:{display:true,text:'到達レベルの分布（セッション日ごと・人数）'}},responsive:true,
       scales:{x:{stacked:true},y:{stacked:true,title:{display:true,text:'人数'}}}}});
   const last=weeks[weeks.length-1], c=counts[last], total=LEVELS.reduce((s,L)=>s+(c[L]||0),0)||1;
   const pct=L=>Math.round((c[L]||0)/total*100);
