@@ -10,7 +10,7 @@
 |---|---|---|
 | レベル定義・卒業条件・スケジュール・ゴール分布・業務フロー | **`design/curriculum.md`** | `scripts/*`・`slides/*`・`mkdocs.yml` nav・レベル診断Forms |
 | オンボで受講者に説明する正本ブロック（①前提＝営業プロセス変革／②設計の重心／③レベル定義と卒業条件／④学びの変化＝失敗して修正／⑤3ヶ月スケジュール・混在型） | **`design/curriculum.md` 冒頭ほか** | **`scripts/onboarding.md`（台本＝話し言葉）と `slides/onboarding.md`（スライド①〜⑤＝縮約版）の両方に必須**（§3-5の番人が監視）。※背骨（業務フロー×渡し方）はオンボ対象外＝LV1以降＋設計書§3で扱う |
-| 各レベルの分刻み進行（セリフ・操作・チャット） | **`scripts/<level>.md`（台本）** | `slides/<level>.md`（投影は台本の要点だけ） |
+| 各レベルの分刻み進行（セリフ・操作・チャット） | **`scripts/<level>.md`（台本）**。※**オンボーディングは `slides/onboarding.md`（スライド）が正＝台本が追従**（`/slide-sync` で反映） | `slides/<level>.md`（オンボ以外は台本の要点を縮約） |
 | 安全・録画・同意の共通ルール | **`scripts/index.md`（台本ガイド）** | 各台本は参照（再掲は最小限） |
 | GitHub運用・ビルド・公開 | **`design/github-ops.md` ＋ `mkdocs.yml` ＋ `deploy.yml`** | — |
 | 講義モード（Marp）方針 | **`design/lecture-mode.md`** | — |
