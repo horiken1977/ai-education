@@ -5,3 +5,5 @@ __pycache__/
 .DS_Store
 .venv/
 venv/
+# 出欠（実名・個人情報）＝非公開。デプロイ・commitしない
+attendance/
