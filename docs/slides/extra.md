@@ -5,6 +5,12 @@ paginate: true
 header: 'AIレベルアップセッション — エクストラ（希望者）'
 ---
 
+<!--
+編集メモ（スライドには映りません）── エクストラの「消さない語」＝番人 tools/check_slide_sync.py が監視。
+言い回しは自由。ただし次の語をスライドから消すとCIが赤：作る側 / 公開 / URL
+語ごと変えるときは check_slide_sync.py の LEVELS[extra] と 台本 scripts/extra.md も更新。編集後: bash tools/check_slides.sh
+-->
+
 <!-- _class: lead -->
 # エクストラ：Bobでミニアプリ
 ## “使う側”から“作る側”へ

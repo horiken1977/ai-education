@@ -36,5 +36,5 @@ jobs:
           echo "OK: 旧表記なし"
       - name: データ重複・表示ダブり・ナビ重複の検出
         run: python3 tools/check_dup.py
-      - name: 受講者向け正本が台本・スライド両方に揃っているか
-        run: python3 tools/check_onboarding_sync.py
+      - name: 受講者向け概念が台本・スライド両方に揃っているか（全レベル）
+        run: python3 tools/check_slide_sync.py
