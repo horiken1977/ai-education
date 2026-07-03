@@ -7,3 +7,6 @@ __pycache__/
 venv/
 # 出欠（実名・個人情報）＝非公開。デプロイ・commitしない
 attendance/
+# ダッシュボードdataは responses.csv 以外を非公開（バックアップ/コピー/未匿名化エクスポートの誤公開防止）
+docs/dashboard/data/*
+!docs/dashboard/data/responses.csv
