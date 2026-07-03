@@ -35,6 +35,9 @@ section blockquote { border-left: 4px solid #8d8d8d; color: #525252; }
 
 section table th { background-color: #161616; color: #ffffff; }
 section table td, section table th { border-color: #e0e0e0; }
+/* 表はスライドに収まるよう控えめサイズ＋詰めたパディング（長い表の溢れ防止） */
+section table { font-size: 0.7em; width: 100%; }
+section table td, section table th { padding: 0.2em 0.5em; line-height: 1.3; }
 
 /* タイトルスライド（lead）：IBM は左寄せ・大きめ */
 section.lead { justify-content: center; text-align: left; }

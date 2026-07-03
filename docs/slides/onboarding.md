@@ -25,9 +25,14 @@ header: 'AIレベルアップセッション — オンボーディング'
 まず“今回の取組の地図”を5枚で共有します。
 
 ---
-<!-- _class: lead -->
 
 ## ① 自分たちもAI+だよね — 営業プロセスが変わる
+
+<style scoped>
+section { justify-content: flex-start; }
+table { font-size: 16px; }
+th, td { padding: 2px 8px; line-height: 1.2; }
+</style>
 
 | 営業フェーズ | 従来 | AI＋ |
 |---|---|---|
