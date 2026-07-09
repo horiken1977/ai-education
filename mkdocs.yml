@@ -5,6 +5,10 @@ exclude_docs: |
   slides/
 not_in_nav: |
   /dashboard/
+  /design/
+  /scripts/
+  /materials/
+  /templates/
 extra_css:
   - assets/ibm.css
 theme:
@@ -40,24 +44,6 @@ markdown_extensions:
 nav:
   - ホーム: index.md
   - スライド（復習用）: slides-index.md
-  - 設計:
-      - カリキュラム設計書（正本）: design/curriculum.md
-      - 設計の整合を保つ仕組み: design/maintenance.md
-      - GitHub運用設計: design/github-ops.md
-      - 講義モード設計: design/lecture-mode.md
-  - 講師台本:
-      - 台本ガイド（共通）: scripts/index.md
-      - オンボーディング（全員必須）: scripts/onboarding.md
-      - LV1 チャットAI使い倒し: scripts/l1.md
-      - LV2 Bobでデモ: scripts/l2.md
-      - LV3 使い分け: scripts/l3.md
-      - エクストラ（希望者）Bobでアプリ: scripts/extra.md
-  - 配布教材:
-      - オンボーディング 会議トランスクリプト: materials/l1-transcript.md
-      - LV1 リサーチ対象: materials/lv1-research-target.md
-      - LV2 デモ業務テーマ: materials/lv2-demo-theme.md
-      - LV3 案件ブリーフ: materials/l3-brief.md
-  - テンプレート集: templates/index.md
   - セッションの学び（復習）:
       - この記録について: review/index.md
       - オンボーディングの学び: review/onboarding.md
