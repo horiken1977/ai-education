@@ -5,8 +5,7 @@
 
 ## このサイトの使い方
 - **講師・運営の方** → まず [カリキュラム設計書](design/curriculum.md)、当日は [講師台本](scripts/index.md)。
-- **受講者の方** → 受けた回の[**スライド（復習用）**](slides-index.md)で復習・予習。自分のレベルの[配布教材](materials/l1-transcript.md)と[テンプレート集](templates/index.md)も使えます。
-- **進捗を見たい方** → [KPIダッシュボード](dashboard/index.md)。
+- **受講者の方** → 受けた回の[**スライド（復習用）**](slides-index.md)と[**セッションの学び（復習）**](review/index.md)で復習・予習。自分のレベルの[配布教材](materials/l1-transcript.md)と[テンプレート集](templates/index.md)も使えます。
 
 ## 講義スライド（投影用）
 講師が投影する、**PPTのように1画面ずつ切り替わる**スライドです（矢印キーで送り、`F`でフルスクリーン／スクロールしません）。受講者の復習・予習用の一覧は [**スライド（復習用）**](slides-index.md)。

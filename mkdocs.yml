@@ -3,6 +3,8 @@ site_description: AIレベルアップセッション（営業向け・IBM Consu
 docs_dir: docs
 exclude_docs: |
   slides/
+not_in_nav: |
+  /dashboard/
 extra_css:
   - assets/ibm.css
 theme:
@@ -56,4 +58,6 @@ nav:
       - LV2 デモ業務テーマ: materials/lv2-demo-theme.md
       - LV3 案件ブリーフ: materials/l3-brief.md
   - テンプレート集: templates/index.md
-  - KPIダッシュボード: dashboard/index.md
+  - セッションの学び（復習）:
+      - この記録について: review/index.md
+      - オンボーディングの学び: review/onboarding.md
