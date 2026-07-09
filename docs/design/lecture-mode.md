@@ -91,7 +91,7 @@ ai-education（公開リポジトリ / 公開Pages）
 │  ├─ index.md
 │  ├─ slides/                 ← Marpソース（onboarding/l1/l2/l3）… /slides/ で公開
 │  ├─ scripts/                ← 台本（手元用）
-│  ├─ materials/ templates/
+│  ├─ materials/ toolkit/
 │  ├─ dashboard/              ← ダッシュボード（公開・別ディレクトリ）… /dashboard/
 │  └─ design/                 ← 設計（本書 lecture-mode.md を含む）
 ├─ mkdocs.yml

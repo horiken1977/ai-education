@@ -1,0 +1,21 @@
+{
+  "//": "エディタの markdownlint 診断ノイズを抑える設定。CIは mkdocs --strict / check_dup / check_slide_sync / 旧表記grep のみで、markdownlint は非対象。台本・スライド・設計書で常時出ていたスタイル警告を無効化（機能に影響なし）。",
+  "default": true,
+  "MD001": false,
+  "MD009": false,
+  "MD013": false,
+  "MD022": false,
+  "MD024": false,
+  "MD025": false,
+  "MD026": false,
+  "MD028": false,
+  "MD031": false,
+  "MD032": false,
+  "MD033": false,
+  "MD034": false,
+  "MD036": false,
+  "MD041": false,
+  "MD047": false,
+  "MD058": false,
+  "MD060": false
+}

@@ -3,13 +3,12 @@ site_description: AIレベルアップセッション（営業向け・IBM Consu
 docs_dir: docs
 exclude_docs: |
   slides/
-  !/templates/          # MkDocs既定で /templates/ は除外される→受講者向けに復活（navには出さず not_in_nav で直リンク到達のみ）
 not_in_nav: |
   /dashboard/
   /design/
   /scripts/
   /materials/
-  /templates/
+  /toolkit/
 extra_css:
   - assets/ibm.css
 theme:

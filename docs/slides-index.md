@@ -18,5 +18,4 @@
 
 ---
 
-- 当日の詳しい進め方（分刻み）は [講師台本](scripts/index.md)。
-- 自分のレベルの[配布教材](materials/l1-transcript.md)・[テンプレート集](templates/index.md)も復習に使えます。
+- 自分のレベルの[配布教材](materials/l1-transcript.md)・[テンプレート集](toolkit/index.md)も復習に使えます。

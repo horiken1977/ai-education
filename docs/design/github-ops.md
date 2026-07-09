@@ -72,8 +72,8 @@ ai-sales-training/                    ← リポジトリ root
    │  ├─ l2-meeting-transcript.md     L2：会議文字起こし
    │  ├─ l2-deal-list.md              L2：案件リスト
    │  └─ l3-brief.md                  L3：案件ブリーフ
-   ├─ templates/
-   │  └─ index.md                     プロンプトテンプレ・チェックリスト集
+   ├─ toolkit/
+   │  └─ index.md                     プロンプトテンプレ・チェックリスト集（旧templates／MkDocs予約名回避）
    ├─ dashboard/
    │  ├─ index.md                     KPIダッシュボード（グラフ表示ページ）
    │  └─ data/levels.csv              週次レベル分布データ（運営が更新）
@@ -143,7 +143,7 @@ nav:
       - L2 会議文字起こし: materials/l2-meeting-transcript.md
       - L2 案件リスト: materials/l2-deal-list.md
       - L3 案件ブリーフ: materials/l3-brief.md
-  - テンプレート集: templates/index.md
+  - テンプレート集: toolkit/index.md
   - KPIダッシュボード: dashboard/index.md
 ```
 
@@ -234,7 +234,7 @@ __pycache__/
 | 月 | レベル診断Forms配布／前回宿題リマインド | Forms・Teams |
 | 火〜水 | 当週セッションの準備（台本確認・配布教材更新があればPR） | GitHub PR |
 | 木/金 | 本番セッション実施 | Teams |
-| 翌日 | 診断結果CSVを `dashboard/data/levels.csv` に追記コミット／気づきを台本に反映（PR）／良かった資産を `templates/` に昇格 | GitHub PR |
+| 翌日 | 診断結果CSVを `dashboard/data/levels.csv` に追記コミット／気づきを台本に反映（PR）／良かった資産を `toolkit/` に昇格 | GitHub PR |
 
 ### 編集の実務（非エンジニアでも回せる）
 - 小さな修正は **GitHub Web UI で直接編集**（ファイルを開いて鉛筆アイコン → 変更 → PR作成）。ローカル環境構築は不要。
