@@ -14,6 +14,9 @@ python3 tools/check_dup.py || fail=1
 echo "== 2) 受講者向け概念の 台本⇄スライド 整合・全レベル (check_slide_sync.py) =="
 python3 tools/check_slide_sync.py || fail=1
 
+echo "== 2b) curriculum定義のサブ回カバレッジ (check_session_coverage.py) =="
+python3 tools/check_session_coverage.py || fail=1
+
 echo "== 3) 旧表記の検査 =="
 if grep -rnE "L1 初心者|L2 初級|L3 上級|初級〜中級|3つのレベル|初心者ゼロ|半数以上が上級|営業向けAI研修" docs mkdocs.yml --exclude=maintenance.md; then
   echo "  -> NG: 旧表記が残っています（上記の行）。設計書(curriculum.md)の表記に直す。"

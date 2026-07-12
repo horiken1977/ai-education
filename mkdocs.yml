@@ -36,7 +36,11 @@ markdown_extensions:
   - tables
   - toc:
       permalink: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:              # ```mermaid をフローチャートとして描画（台本のフロー図用）
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight
   - pymdownx.snippets:        # 設計書のレベル定義をホーム等へ取り込む（単一の正）
       base_path: ["docs"]

@@ -38,3 +38,5 @@ jobs:
         run: python3 tools/check_dup.py
       - name: 受講者向け概念が台本・スライド両方に揃っているか（全レベル）
         run: python3 tools/check_slide_sync.py
+      - name: curriculum定義のサブ回に台本・スライド両方が在るか
+        run: python3 tools/check_session_coverage.py
