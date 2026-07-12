@@ -40,6 +40,15 @@ header: 'AIレベルアップセッション — エクストラ（希望者）'
 
 ## 4ステップで進める
 
+<style scoped>.flow .node { font-size: .78em; }</style>
+
+<div class="flow">
+  <span class="node">①課題を選ぶ<br><small>誰が・どの画面で</small></span>
+  <span class="node swap">②Bobで作る<br><small>動く最小版(MVP)</small></span>
+  <span class="node">③公開する<br><small>GitHubでURL</small></span>
+  <span class="node goal">④共有する<br><small>反応を1つ記録</small></span>
+</div>
+
 ```text
 ① 課題を選ぶ   → 何を・誰が・どの画面で（1枚で言える）
 ② Bobで作る    → 動く最小版（MVP）。対話で反復、コードは書かない

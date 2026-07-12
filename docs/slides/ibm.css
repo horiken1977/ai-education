@@ -54,8 +54,10 @@ header { color: #6f6f6f; font-weight: 600; }
      ・縦に並べる            → <div class="flow col">
      ・四角ではなく円        → <span class="node circle">
      ・強調（青塗り）        → <span class="node accent">
+     ・ゴール／人が確認（緑） → <span class="node goal">
      ・従来・控えめ（グレー） → <span class="node plain">
      ・枠だけ（白地）        → <span class="node ghost">
+     ・区切りを＋/⇄に変える  → <span class="node plus"> / <span class="node swap">
      ・分岐や複数行のラベル   → <br> をそのまま使えます
    2本のフローを見出し付きで縦に積むには <div class="flow-set"> で囲む。
    ============================================================ */
@@ -119,6 +121,11 @@ header { color: #6f6f6f; font-weight: 600; }
 .flow > .node.accent { background: #0f62fe; color: #ffffff; }      /* 強調 */
 .flow > .node.plain  { border-color: #a8a8a8; background: #f4f4f4; }/* 従来・控えめ */
 .flow > .node.ghost  { background: #ffffff; }                      /* 枠だけ */
+.flow > .node.goal   { border-color: #24a148; background: #defbe6; }/* ゴール・人が確認（緑） */
+
+/* 区切り記号の上書き（そのノードの右／下に出る記号を → から変える） */
+.flow > .node.plus:not(:last-child)::after { content: "＋"; }      /* 並列・組み合わせ */
+.flow > .node.swap:not(:last-child)::after { content: "⇄"; }      /* 対話で往復 */
 
 /* ラベル付きで2本以上のフローを積む枠 */
 .flow-set { margin: 0.6em 0; }
