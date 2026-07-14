@@ -1,7 +1,13 @@
 # AIレベルアップセッション（リポジトリ）
 
 営業職向けAI教育プログラム（IBM Consulting Advantage + Copilot）の **設計書・講師台本・配布教材・テンプレート・KPIダッシュボード** を一元管理するリポジトリです。
-中身は [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) で HTML サイトとしてビルドされ、GitHub Pages（社内限定）で公開されます。
+中身は [MkDocs Material](https://squidfunk.github.io/mkdocs-material/) で HTML サイトとしてビルドされ、GitHub Pages で公開されます。
+
+## 公開URL
+- **受講者ダッシュボード（受講者向けトップ）**：<https://horiken1977.github.io/ai-education/>
+  左ナビは3つ（ホーム／スライド／セッションの学び）。日々の受講はここから。
+- **管理者ダッシュボード（KPI＋管理者メニュー）**：<https://horiken1977.github.io/ai-education/dashboard/>
+  到達レベル分布のKPIと、設計書・台本・教材・学びノートへの導線。**受講者ナビには非表示**（直URLで到達）。
 
 ## このリポジトリの歩き方
 - 教材・台本など**サイトの中身はすべて `docs/` 配下の Markdown**です。日々の更新は `docs/` だけ触ります。
