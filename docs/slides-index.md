@@ -11,7 +11,7 @@
 |---|---|---|
 | オンボーディング（全員必須） | <a href="../slides/onboarding.html" target="_blank">▶ 開く</a> | 会議録画→議事録を体験＋研修の全体像（前提・重心・レベル・背骨・12週）を共有 |
 | オンボーディング（第2回・図解版） | <a href="../slides/onboarding-2.html" target="_blank">▶ 開く</a> | 全体像・マインドセットを図解でおさらい＋会議録画→議事録をふたたび実践 |
-| LV1 チャットAI使い倒し | <a href="../slides/l1.html" target="_blank">▶ 開く</a> | チャットAIで提案PPTを作る（調べる→構成→Copilotで伏字→Gensparkでスライド化） |
+| LV1 チャットAI使い倒し | <a href="../slides/l1.html" target="_blank">▶ 開く</a> | チャットAIでディスカッション・ペーパーを作る（調べる→構成→Copilotで伏字→Gensparkでスライド化） |
 | LV2 Bobでデモ | <a href="../slides/l2.html" target="_blank">▶ 開く</a> | 提案を「言葉」から「体感」へ。Bobで紙芝居デモを1本作る |
 | LV3 使い分け | <a href="../slides/l3.html" target="_blank">▶ 開く</a> | 案件まるごとを ICA/Copilot/Bob を使い分けて1周回す |
 | エクストラ（希望者） | <a href="../slides/extra.html" target="_blank">▶ 開く</a> | Bobでミニアプリ／静的ページを作りGitHub等で公開（作る側へ） |
